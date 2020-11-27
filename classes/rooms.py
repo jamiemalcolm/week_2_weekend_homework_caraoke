@@ -9,8 +9,8 @@ class Rooms():
         self.cash = 0
         self.num_guests = 0
 
-    def add_guest(self):
-        self.num_guests += 1
+    def add_guest(self, group):
+        self.num_guests += len(group)
 
     def add_song_to_playlist(self, song):
         self.playlist.append(song)
