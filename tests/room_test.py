@@ -55,15 +55,15 @@ class TestRooms(unittest.TestCase):
         self.assertEqual(1, self.room_4.num_guests)
 
     def test_add_song_to_playlist(self):
-        prefered_playlist = [self.song_1]
-        self.room_1.add_song_to_playlist(prefered_playlist)
-        self.assertEqual(1, len(self.room_1.playlist))
+        prefered_playlist = [self.song_1, self.song_2]
+        self.room_1.add_songs_to_playlist(prefered_playlist)
+        self.assertEqual(2, len(self.room_1.playlist))
 
     def test_can_remove_song_from_playlist(self):
-        prefered_playlist = [self.song_1]
-        self.room_1.remove_song_from_playlist(prefered_playlist)
-        self.assertEqual([], self.room_1.playlist)
+        prefered_playlist = [self.song_1, self.song_2]
+        self.room_1.remove_songs_from_playlist(prefered_playlist, self.song_1)
+        self.assertEqual(1, len(self.room_1.playlist))
 
     def test_add_playlist_to_playlist(self):
-        self.room_1.add_song_to_playlist(self.prefered_playlist_1)
+        self.room_1.add_songs_to_playlist(self.prefered_playlist_1)
         self.assertEqual(2, len(self.room_1.playlist))
