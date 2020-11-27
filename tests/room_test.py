@@ -11,3 +11,6 @@ class TestRooms(unittest.TestCase):
         self.room_2 = Rooms("Yellow", 30, 15, 10)
         self.room_3 = Rooms("Green", 45, 20, 15)
         self.room_4 = Rooms("Blue", 60, 25, 10)
+
+    def test_room_has_name(self):
+        self.assertEqual("Red", self.room_1.name)
