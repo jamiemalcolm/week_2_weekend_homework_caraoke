@@ -15,3 +15,6 @@ class TestGuests(unittest.TestCase):
 
     def test_guest_has_name(self):
         self.assertEqual("Ann", self.guest_1.name)
+
+    def test_guest_has_wallet(self):
+        self.assertEqual(40, self.guest_2.wallet)
