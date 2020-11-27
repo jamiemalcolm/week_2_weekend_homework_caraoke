@@ -17,3 +17,6 @@ class TestSongs(unittest.TestCase):
 
     def test_song_has_title(self):
         self.assertEqual("Flourecent Adolescent", self.song_2.title)
+
+    def test_song_has_duration(self):
+        self.assertEqual(5, self.song_3.duration)
