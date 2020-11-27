@@ -20,3 +20,6 @@ class TestRooms(unittest.TestCase):
 
     def test_room_has_price(self):
         self.assertEqual(20, self.room_3.price)
+
+    def test_room_has_capacity(self):
+        self.assertEqual(10, self.room_4.capacity)
