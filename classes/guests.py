@@ -4,3 +4,7 @@ class Guests():
         self.name = name
         self.wallet = wallet
         self.age = age
+
+    def can_afford_session(self, room):
+        if self.wallet >= room.price:
+            return True
