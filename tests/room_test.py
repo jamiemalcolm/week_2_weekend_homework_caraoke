@@ -17,3 +17,6 @@ class TestRooms(unittest.TestCase):
 
     def test_room_has_time_limit(self):
         self.assertEqual(30, self.room_2.time_limit)
+
+    def test_room_has_price(self):
+        self.assertEqual(20, self.room_3.price)
