@@ -29,3 +29,6 @@ class TestRooms(unittest.TestCase):
 
     def test_room_cash_starts_at_0(self):
         self.assertEqual(0, self.room_2.cash)
+
+    def test_room_num_guests_starts_at_0(self):
+        self.assertEqual(0, self.room_3.num_guests)
