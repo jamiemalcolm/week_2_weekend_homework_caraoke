@@ -8,3 +8,6 @@ class Rooms():
         self.playlist = []
         self.cash = 0
         self.num_guests = 0
+
+    def add_guest(self):
+        self.num_guests += 1

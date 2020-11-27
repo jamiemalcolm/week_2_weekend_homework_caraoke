@@ -11,7 +11,16 @@ class TestRooms(unittest.TestCase):
         self.room_2 = Rooms("Yellow", 30, 15, 10)
         self.room_3 = Rooms("Green", 45, 20, 15)
         self.room_4 = Rooms("Blue", 60, 25, 10)
+        self.room_5 = Rooms("Orange", 10, 5, 4)
+
+        self.guest_1 = Guests("Ann", 50, 45)
+        self.guest_2 = Guests("Bill", 40, 35)
+        self.guest_3 = Guests("Carl", 30, 18)
+        self.guest_4 = Guests("Dee", 15, 17)
+
+
 # basic test assuring class set up correctly
+
 
     def test_room_has_name(self):
         self.assertEqual("Red", self.room_1.name)
@@ -33,3 +42,7 @@ class TestRooms(unittest.TestCase):
 
     def test_room_num_guests_starts_at_0(self):
         self.assertEqual(0, self.room_3.num_guests)
+
+    def test_add_guest_to_room(self):
+        self.room_4.add_guest()
+        self.assertEqual(1, self.room_4.num_guests)
