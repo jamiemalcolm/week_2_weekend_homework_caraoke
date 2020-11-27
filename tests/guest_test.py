@@ -18,6 +18,12 @@ class TestGuests(unittest.TestCase):
         self.room_4 = Rooms("Blue", 60, 25, 10)
         self.room_5 = Rooms("Orange", 10, 5, 4)
 
+        self.song_1 = Songs("Kings Of Leon", "Charmer", 4)
+        self.song_2 = Songs("Arctic Monkeys", "Flourecent Adolescent", 3)
+        self.song_3 = Songs("Jay-Z", "Empire State Of Mind", 5)
+        self.song_4 = Songs("Chance The Rapper", "Acid Rap", 5)
+
+        prefered_playlist_1 = [self.song_1, self.song_2]
         group_1 = [self.guest_1]
 # basic test assuring class set up correctly
 

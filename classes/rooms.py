@@ -13,7 +13,7 @@ class Rooms():
         self.num_guests += len(group)
 
     def add_song_to_playlist(self, song):
-        self.playlist.append(song)
+        self.playlist = song
 
     def remove_song_from_playlist(self, played_song):
         for song in self.playlist:

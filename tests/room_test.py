@@ -23,9 +23,10 @@ class TestRooms(unittest.TestCase):
         self.song_3 = Songs("Jay-Z", "Empire State Of Mind", 5)
         self.song_4 = Songs("Chance The Rapper", "Acid Rap", 5)
 
+        self.prefered_playlist_1 = [self.song_1, self.song_2]
+        self.group_1 = [self.guest_1, self.guest_2]
 
 # basic test assuring class set up correctly
-
 
     def test_room_has_name(self):
         self.assertEqual("Red", self.room_1.name)
@@ -54,9 +55,15 @@ class TestRooms(unittest.TestCase):
         self.assertEqual(1, self.room_4.num_guests)
 
     def test_add_song_to_playlist(self):
-        self.room_1.add_song_to_playlist(self.song_1)
+        prefered_playlist = [self.song_1]
+        self.room_1.add_song_to_playlist(prefered_playlist)
         self.assertEqual(1, len(self.room_1.playlist))
 
     def test_can_remove_song_from_playlist(self):
-        self.room_1.remove_song_from_playlist(self.song_1)
+        prefered_playlist = [self.song_1]
+        self.room_1.remove_song_from_playlist(prefered_playlist)
         self.assertEqual([], self.room_1.playlist)
+
+    def test_add_playlist_to_playlist(self):
+        self.room_1.add_song_to_playlist(self.prefered_playlist_1)
+        self.assertEqual(2, len(self.room_1.playlist))
