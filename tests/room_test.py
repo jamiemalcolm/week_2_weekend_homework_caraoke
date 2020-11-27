@@ -26,6 +26,7 @@ class TestRooms(unittest.TestCase):
 
 # basic test assuring class set up correctly
 
+
     def test_room_has_name(self):
         self.assertEqual("Red", self.room_1.name)
 
@@ -54,3 +55,7 @@ class TestRooms(unittest.TestCase):
     def test_add_song_to_playlist(self):
         self.room_1.add_song_to_playlist(self.song_1)
         self.assertEqual(1, len(self.room_1.playlist))
+
+    def test_can_remove_song_from_playlist(self):
+        self.room_1.remove_song_from_playlist(self.song_1)
+        self.assertEqual([], self.room_1.playlist)

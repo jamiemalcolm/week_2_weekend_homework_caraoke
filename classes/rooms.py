@@ -14,3 +14,8 @@ class Rooms():
 
     def add_song_to_playlist(self, song):
         self.playlist.append(song)
+
+    def remove_song_from_playlist(self, played_song):
+        for song in self.playlist:
+            if song == played_song:
+                self.playlist.remove(song)
