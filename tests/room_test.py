@@ -23,3 +23,6 @@ class TestRooms(unittest.TestCase):
 
     def test_room_has_capacity(self):
         self.assertEqual(10, self.room_4.capacity)
+
+    def test_room_playlist_empty(self):
+        self.assertEqual([], self.room_1.playlist)
