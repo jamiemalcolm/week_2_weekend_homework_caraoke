@@ -41,3 +41,4 @@ class TestGuests(unittest.TestCase):
     def test_can_pay_for_session(self):
         self.guest_1.pay_for_session(self.room_1)
         self.assertEqual(20, self.guest_1.wallet)
+        self.assertEqual(30, self.room_1.cash)

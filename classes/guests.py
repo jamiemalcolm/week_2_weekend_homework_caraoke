@@ -12,3 +12,4 @@ class Guests():
 
     def pay_for_session(self, room):
         self.wallet -= room.price
+        room.cash += room.price
