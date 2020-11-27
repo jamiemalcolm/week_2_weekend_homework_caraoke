@@ -17,6 +17,8 @@ class TestGuests(unittest.TestCase):
         self.room_3 = Rooms("Green", 45, 20, 15)
         self.room_4 = Rooms("Blue", 60, 25, 10)
         self.room_5 = Rooms("Orange", 10, 5, 4)
+
+        group_1 = [self.guest_1]
 # basic test assuring class set up correctly
 
     def test_guest_has_name(self):
@@ -35,3 +37,7 @@ class TestGuests(unittest.TestCase):
     def test_can_afford_session__flase(self):
         can_afford = self.guest_4.can_afford_session(self.room_1)
         self.assertEqual(False, can_afford)
+
+    def test_can_pay_for_session(self):
+        self.guest_1.pay_for_session(self.room_1)
+        self.assertEqual(20, self.guest_1.wallet)
