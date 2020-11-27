@@ -18,9 +18,13 @@ class TestRooms(unittest.TestCase):
         self.guest_3 = Guests("Carl", 30, 18)
         self.guest_4 = Guests("Dee", 15, 17)
 
+        self.song_1 = Songs("Kings Of Leon", "Charmer", 4)
+        self.song_2 = Songs("Arctic Monkeys", "Flourecent Adolescent", 3)
+        self.song_3 = Songs("Jay-Z", "Empire State Of Mind", 5)
+        self.song_4 = Songs("Chance The Rapper", "Acid Rap", 5)
+
 
 # basic test assuring class set up correctly
-
 
     def test_room_has_name(self):
         self.assertEqual("Red", self.room_1.name)
@@ -46,3 +50,7 @@ class TestRooms(unittest.TestCase):
     def test_add_guest_to_room(self):
         self.room_4.add_guest()
         self.assertEqual(1, self.room_4.num_guests)
+
+    def test_add_song_to_playlist(self):
+        self.room_1.add_song_to_playlist(self.song_1)
+        self.assertEqual(1, len(self.room_1.playlist))

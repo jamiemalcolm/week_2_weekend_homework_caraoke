@@ -11,3 +11,6 @@ class Rooms():
 
     def add_guest(self):
         self.num_guests += 1
+
+    def add_song_to_playlist(self, song):
+        self.playlist.append(song)
