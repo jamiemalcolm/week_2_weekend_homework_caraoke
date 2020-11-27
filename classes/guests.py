@@ -8,3 +8,4 @@ class Guests():
     def can_afford_session(self, room):
         if self.wallet >= room.price:
             return True
+        return False

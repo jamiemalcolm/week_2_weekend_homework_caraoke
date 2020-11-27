@@ -31,3 +31,7 @@ class TestGuests(unittest.TestCase):
     def test_can_afford_session__true(self):
         can_afford = self.guest_1.can_afford_session(self.room_2)
         self.assertEqual(True, can_afford)
+
+    def test_can_afford_session__flase(self):
+        can_afford = self.guest_4.can_afford_session(self.room_1)
+        self.assertEqual(False, can_afford)
