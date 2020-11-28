@@ -13,10 +13,12 @@ class TestRooms(unittest.TestCase):
         self.room_4 = Rooms("Blue", 60, 25, 10)
         self.room_5 = Rooms("Orange", 10, 5, 4)
 
-        self.guest_1 = Guests("Ann", 50, 45)
-        self.guest_2 = Guests("Bill", 40, 35)
-        self.guest_3 = Guests("Carl", 30, 18)
-        self.guest_4 = Guests("Dee", 15, 17)
+        self.guest_1 = Guests("Ann", 50, 45, {"Kings Of Leon": "Charmer"})
+        self.guest_2 = Guests("Bill", 40, 35, {
+                              "Arctic Monkeys": "Flourecent Adolescent"})
+        self.guest_3 = Guests("Carl", 30, 18, {
+                              "Jay-Z": "Empire State Of Mind"})
+        self.guest_4 = Guests("Dee", 5, 17, {"Chance The Rapper": "Acid Rap"})
 
         self.song_1 = Songs("Kings Of Leon", "Charmer", 4)
         self.song_2 = Songs("Arctic Monkeys", "Flourecent Adolescent", 3)

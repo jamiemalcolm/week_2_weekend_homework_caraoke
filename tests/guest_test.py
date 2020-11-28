@@ -7,10 +7,12 @@ from classes.songs import Songs
 
 class TestGuests(unittest.TestCase):
     def setUp(self):
-        self.guest_1 = Guests("Ann", 50, 45)
-        self.guest_2 = Guests("Bill", 40, 35)
-        self.guest_3 = Guests("Carl", 30, 18)
-        self.guest_4 = Guests("Dee", 5, 17)
+        self.guest_1 = Guests("Ann", 50, 45, {"Kings Of Leon": "Charmer"})
+        self.guest_2 = Guests("Bill", 40, 35, {
+                              "Arctic Monkeys": "Flourecent Adolescent"})
+        self.guest_3 = Guests("Carl", 30, 18, {
+                              "Jay-Z": "Empire State Of Mind"})
+        self.guest_4 = Guests("Dee", 5, 17, {"Chance The Rapper": "Acid Rap"})
 
         self.room_1 = Rooms("Red", 60, 30, 25)
         self.room_2 = Rooms("Yellow", 30, 15, 10)
@@ -48,3 +50,7 @@ class TestGuests(unittest.TestCase):
         self.guest_1.pay_for_session(self.room_1)
         self.assertEqual(20, self.guest_1.wallet)
         self.assertEqual(30, self.room_1.cash)
+
+    def test_guest_has_favourite_song(self):
+        self.assertEqual({
+            "Jay-Z": "Empire State Of Mind"}, self.guest_3.favourite_song)
