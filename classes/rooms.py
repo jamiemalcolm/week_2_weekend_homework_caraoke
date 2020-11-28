@@ -20,3 +20,7 @@ class Rooms():
         for song in self.playlist:
             if song == played_song:
                 self.playlist.remove(song)
+
+    def room_is_full(self):
+        if self.num_guests == self.capacity:
+            return "the room is now full"

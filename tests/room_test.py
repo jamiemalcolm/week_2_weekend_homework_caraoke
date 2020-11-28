@@ -26,7 +26,7 @@ class TestRooms(unittest.TestCase):
         self.song_4 = Songs("Chance The Rapper", "Acid Rap", 5)
 
         self.prefered_playlist_1 = [self.song_1, self.song_2]
-        self.group_1 = [self.guest_1, self.guest_2]
+        self.group_1 = [self.guest_1, self.guest_2, self.guest_3, self.guest_4]
 
 # basic test assuring class set up correctly
 
@@ -69,3 +69,8 @@ class TestRooms(unittest.TestCase):
     def test_add_playlist_to_playlist(self):
         self.room_1.add_songs_to_playlist(self.prefered_playlist_1)
         self.assertEqual(2, len(self.room_1.playlist))
+
+    def test_room_reach_capacity(self):
+        self.room_5.add_guest(self.group_1)
+        full_room = self.room_5.room_is_full()
+        self.assertEqual("the room is now full", full_room)
