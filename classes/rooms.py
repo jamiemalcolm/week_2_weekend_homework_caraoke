@@ -1,3 +1,7 @@
+from classes.guests import Guests
+from classes.songs import Songs
+
+
 class Rooms():
 
     def __init__(self, name, time_limit, price, capacity):
@@ -7,7 +11,7 @@ class Rooms():
         self.capacity = capacity
         self.playlist = []
         self.cash = 0
-        self.num_guests = len([])
+        self.num_guests = 0
 
     def add_guest(self, group):
         self.num_guests += len(group)
@@ -28,4 +32,8 @@ class Rooms():
     def begin_a_session(self, room, group, playlist):
         self.add_guest(group)
         self.add_songs_to_playlist(playlist)
-        # guests.pay_for_session(group, room)
+        self.take_payment_for_session(room, group)
+
+    def take_payment_for_session(self, room, group):
+        group[0].wallet -= self.price
+        self.cash += self.price
