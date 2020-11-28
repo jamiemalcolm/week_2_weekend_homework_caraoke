@@ -26,7 +26,7 @@ class TestGuests(unittest.TestCase):
         self.song_4 = Songs("Chance The Rapper", "Acid Rap", 5)
 
         prefered_playlist_1 = [self.song_1, self.song_2]
-        group_1 = [self.guest_1]
+        self.group_1 = [self.guest_1]
 # basic test assuring class set up correctly
 
     def test_guest_has_name(self):
@@ -47,7 +47,7 @@ class TestGuests(unittest.TestCase):
         self.assertEqual(False, can_afford)
 
     def test_can_pay_for_session(self):
-        self.guest_1.pay_for_session(self.room_1)
+        self.group_1[0].pay_for_session(self.room_1)
         self.assertEqual(20, self.guest_1.wallet)
         self.assertEqual(30, self.room_1.cash)
 

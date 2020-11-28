@@ -27,7 +27,9 @@ class TestRooms(unittest.TestCase):
 
         self.prefered_playlist_1 = [self.song_1, self.song_2]
         self.group_1 = [self.guest_1, self.guest_2, self.guest_3, self.guest_4]
-
+        self.group_2 = [self.guest_1, self.guest_2, self.guest_3]
+        self.group_2_playlist = [self.song_1,
+                                 self.song_2, self.song_3, self.song_4]
 # basic test assuring class set up correctly
 
     def test_room_has_name(self):
@@ -74,3 +76,11 @@ class TestRooms(unittest.TestCase):
         self.room_5.add_guest(self.group_1)
         full_room = self.room_5.room_is_full()
         self.assertEqual("the room is now full", full_room)
+
+    def test_begin_a_session(self):
+        self.room_1.begin_a_session(
+            self.room_1, self.group_2, self.group_2_playlist)
+        self.assertEqual(3, self.room_1.num_guests)
+        self.assertEqual(4, len(self.room_1.playlist))
+        # self.assertEqual(30, self.room_1.cash)
+        # self.assertEqual(20, self.guest_1.wallet)
